@@ -1,10 +1,18 @@
 CREATE DATABASE personofinterest;
 
 CREATE TABLE theHeroes(
-    heroID          int
-    heroFirstName   varchar(52)
-    heroLastName    varchar(52)
-)
+    heroID          int     PRIMARY KEY
+    hFirstName   varchar(52)
+    hLastName    varchar(52)
+    cAffliationID   int
+);
+
+CREATE TABLE theVillains(
+    villainID      int 
+    vFirstName    varchar(52)
+    vLastName     varchar(52)
+    cAffliationID   int   
+);
 
 CREATE TABLE numbered_indiv(
     numIndivID          int
@@ -13,7 +21,7 @@ CREATE TABLE numbered_indiv(
     numberedSSN         varchar(9)
 );
 
-CREATE TABLE perpOrVic(
+CREATE TABLE numPerpOrVic(
     numIndivID        int
     isPerp            boolean
     isVictim          boolean
@@ -24,4 +32,10 @@ CREATE TABLE deadOrAlive(
     numIndivID      int
     isDead          boolean
     isAlive         boolean
+);
+
+CREATE TABLE characterAffliation(
+    cAffliationID   int
+    affliationName  varchar(52)
+
 );
