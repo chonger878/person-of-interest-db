@@ -19,7 +19,17 @@ CREATE TABLE numbered_indiv(
     numberedFirstName   varchar(52)
     numberedLastName    varchar(52)
     numberedSSN         varchar(9)
+
 );
+
+CREATE TABLE miscIndiv(
+    numIndivID          int
+    miscFirstName       varchar(52)
+    miscLastName        varchar(52)
+    relationToNIndiv    varchar(52)
+    wasConnected        boolean
+);
+
 
 CREATE TABLE numPerpOrVic(
     numIndivID        int
@@ -28,14 +38,22 @@ CREATE TABLE numPerpOrVic(
 
 );
 
-CREATE TABLE deadOrAlive(
+CREATE TABLE indivStatus(
+    indStatusID     int     PRIMARY KEY
     numIndivID      int
     isDead          boolean
     isAlive         boolean
+    isUnknown       boolean
 );
 
 CREATE TABLE characterAffliation(
-    cAffliationID   int
+    cAffliationID   int         PRIMARY KEY
     affliationName  varchar(52)
 
 );
+
+CREATE TABLE episodeName(
+    episodeID       int     PRIMARY KEY
+    seasonNum       int
+    episodeName     varchar(355)
+)
