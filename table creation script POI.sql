@@ -5,6 +5,8 @@ CREATE TABLE theHeroes(
     hFirstName   varchar(52)
     hLastName    varchar(52)
     cAffliationID   int
+    CONSTRAINT theHeroes_fk_characterAffliations
+        FOREIGN KEY (cAffliationID) REFERENCES characterAffliation(cAffliationID)
 );
 
 CREATE TABLE theVillains(
