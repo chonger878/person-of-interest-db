@@ -1,10 +1,11 @@
 CREATE DATABASE personofinterest;
 
 CREATE TABLE theHeroes(
-    heroID          int     PRIMARY KEY
+    heroID          int    
     hFirstName   varchar(52)
     hLastName    varchar(52)
     cAffliationID   int
+    PRIMARY KEY(heroID)
     CONSTRAINT theHeroes_fk_characterAffliations
         FOREIGN KEY (cAffliationID) REFERENCES characterAffliation(cAffliationID)
 );
@@ -13,7 +14,9 @@ CREATE TABLE theVillains(
     villainID      int 
     vFirstName    varchar(52)
     vLastName     varchar(52)
-    cAffliationID   int   
+    cAffliationID   int 
+    CONSTRAINT theVillains_fk_characterAffliations
+        FOREIGN KEY (cAffliationID) REFERENCES characterAffliation(cAffliationID)  
 );
 
 CREATE TABLE numbered_indiv(
@@ -25,11 +28,12 @@ CREATE TABLE numbered_indiv(
 );
 
 CREATE TABLE miscIndiv(
-    numIndivID          int
+    noNumIndivID          int   
     miscFirstName       varchar(52)
     miscLastName        varchar(52)
     relationToNIndiv    varchar(52)
     wasConnected        boolean
+    PRIMARY KEY(noNumIndivID)
 );
 
 
