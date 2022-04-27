@@ -24,6 +24,7 @@ CREATE TABLE numbered_indiv(
     numberedFirstName   varchar(52)
     numberedLastName    varchar(52)
     numberedSSN         varchar(9)
+    PRIMARY KEY(numIndivID)
 
 );
 
@@ -45,21 +46,28 @@ CREATE TABLE numPerpOrVic(
 );
 
 CREATE TABLE indivStatus(
-    indStatusID     int     PRIMARY KEY
+    indStatusID     int     
     numIndivID      int
     isDead          boolean
     isAlive         boolean
     isUnknown       boolean
+    PRIMARY KEY(indStatusID)
 );
 
 CREATE TABLE characterAffliation(
-    cAffliationID   int         PRIMARY KEY
+    cAffliationID   int         
     affliationName  varchar(52)
-
+    PRIMARY KEY(cAffliationID)
 );
 
 CREATE TABLE episodeName(
-    episodeID       int     PRIMARY KEY
+    episodeID       int     
     seasonNum       int
     episodeName     varchar(355)
+    PRIMARY KEY(episodeID)
+)
+
+CREATE TABLE wasInEpisode(
+    inEpisode     boolean
+
 )
