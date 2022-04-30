@@ -45,13 +45,15 @@ CREATE TABLE numPerpOrVic(
 
 );
 
-CREATE TABLE indivStatus(
-    indStatusID     int     
+CREATE TABLE indivStatus(     
     numIndivID      int
     isDead          boolean
     isAlive         boolean
     isUnknown       boolean
-    PRIMARY KEY(indStatusID)
+    PRIMARY KEY(numIndivID)
+    CONSTRAINT indivStatus_fk_numIndiv
+        FOREIGN KEY (numIndivID) REFERENCES numbered_indiv(numIndivID)
+    
 );
 
 CREATE TABLE characterAffliation(
