@@ -42,6 +42,9 @@ CREATE TABLE numPerpOrVic(
     numIndivID        int
     isPerp            boolean
     isVictim          boolean
+    PRIMARY KEY(numIndivID)
+    CONSTRAINT numPerpOrVic_fk_numIndiv
+        FOREIGN KEY (numIndivID) REFERENCES numbered_indiv(numIndivID)
 
 );
 
