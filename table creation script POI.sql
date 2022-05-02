@@ -40,22 +40,38 @@ CREATE TABLE miscIndiv(
 
 CREATE TABLE numPerpOrVic(
     numIndivID        int
+    heroID            int
+    villainID         int
     isPerp            boolean
     isVictim          boolean
     PRIMARY KEY(numIndivID)
-    CONSTRAINT numPerpOrVic_fk_numIndiv
+    PRIMARY KEY(heroID)
+    PRIMARY KEY(villainID)
+    CONSTRAINT indivStatus_fk_numIndiv
         FOREIGN KEY (numIndivID) REFERENCES numbered_indiv(numIndivID)
+    CONSTRAINT theHeroes_fk_numIndiv
+        FOREIGN KEY (heroID) REFERENCES theHeroes(heroID)
+    CONSTRAINT theVillains_fk_numIndiv
+        FOREIGN KEY (heroID) REFERENCES theVillains(villainID)
 
 );
 
 CREATE TABLE indivStatus(     
     numIndivID      int
+    heroID          int
+    villainID       int
     isDead          boolean
     isAlive         boolean
     isUnknown       boolean
     PRIMARY KEY(numIndivID)
+    PRIMARY KEY(heroID)
+    PRIMARY KEY(villainID)
     CONSTRAINT indivStatus_fk_numIndiv
         FOREIGN KEY (numIndivID) REFERENCES numbered_indiv(numIndivID)
+    CONSTRAINT theHeroes_fk_numIndiv
+        FOREIGN KEY (heroID) REFERENCES theHeroes(heroID)
+    CONSTRAINT theVillains_fk_numIndiv
+        FOREIGN KEY (heroID) REFERENCES theVillains(villainID)
     
 );
 

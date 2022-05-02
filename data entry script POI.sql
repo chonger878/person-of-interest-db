@@ -13,11 +13,13 @@ VALUES('Harold', 'Finch', 1),
       ('Joss', 'Carter', 3)
 
 INSERT INTO theVillains(vFirstName, vLastName,cAffliationID)
-VALUES('Patrick', 'Simmons', 4)
+VALUES('Patrick', 'Simmons', 4),
+      ('Martine', 'Rousseau', 2),
+      ('John', 'Greer', 2)
 
-INSERT INTO indivStatus(numIndivID, isDead, isAlive, isUnknown)
-VALUES(6, true, false, false, false)
+INSERT INTO indivStatus(numIndivID, heroID, villainID, isDead, isAlive, isUnknown)
+VALUES(null,6, null, true, false, false, false)
 
-INSERT INTO numPerpOrVic(numIndivID,isPerp, isVictim)
-VALUES(6, false, true)
+INSERT INTO numPerpOrVic(numIndivID, heroID, villainID,isPerp, isVictim)
+VALUES(null,6, null,false, true)
 
