@@ -4,6 +4,9 @@ VALUES('The Machine'),
       ('New York Police Department'),
       ('HR');
 
+INSERT INTO numbered_indiv(numberedFirstName,numberedLastName, numberedSSN)
+VALUES('Riley', 'Cavanaugh')
+
 INSERT INTO theHeroes(hFirstName,hLastName,cAffliationID)
 VALUES('Harold', 'Finch', 1),
       ('John', 'Reese', 1),
@@ -20,7 +23,8 @@ VALUES('Patrick', 'Simmons', 4),
       ('Alonzo', 'Quinn', 4)
 
 INSERT INTO indivStatus(numIndivID, heroID, villainID, isDead, isAlive, isUnknown)
-VALUES(null,6, null, true, false, false, false)
+VALUES(null,6, null, true, false, false, false),
+      (1, null, null, true, false, false, false)
 
 INSERT INTO numPerpOrVic(numIndivID, heroID, villainID,isPerp, isVictim)
 VALUES(null,6, null,false, true)
