@@ -7,6 +7,9 @@ VALUES('The Machine'),
 INSERT INTO numbered_indiv(numberedFirstName,numberedLastName, numberedSSN)
 VALUES('Riley', 'Cavanaugh')
 
+INSERT INTO miscIndiv(miscFirstName, miscLastName, relationToNIndiv, wasConnected)
+VALUES('Annie', 'Delaney', 'girlfriend', true)
+
 INSERT INTO theHeroes(hFirstName,hLastName,cAffliationID)
 VALUES('Harold', 'Finch', 1),
       ('John', 'Reese', 1),
@@ -20,7 +23,8 @@ INSERT INTO theVillains(vFirstName, vLastName,cAffliationID)
 VALUES('Patrick', 'Simmons', 4),
       ('Martine', 'Rousseau', 2),
       ('John', 'Greer', 2),
-      ('Alonzo', 'Quinn', 4)
+      ('Alonzo', 'Quinn', 4),
+      ('Kara', 'Stanton', 2)
 
 INSERT INTO indivStatus(numIndivID, heroID, villainID, isDead, isAlive, isUnknown)
 VALUES(null,6, null, true, false, false, false),
