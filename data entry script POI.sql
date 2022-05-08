@@ -28,7 +28,11 @@ VALUES('Patrick', 'Simmons', 4),
 
 INSERT INTO indivStatus(numIndivID, heroID, villainID, isDead, isAlive, isUnknown)
 VALUES(null,6, null, true, false, false, false),
-      (1, null, null, true, false, false, false)
+      (null, null, 2, true, false, false, false),
+      (null, null, 3, true, false, false, false),
+      (null, null, 4, false, true, false),
+      (1, null, null, true, false, false),
+      (null, null, 5, true, false, false)
 
 INSERT INTO numPerpOrVic(numIndivID, heroID, villainID,isPerp, isVictim)
 VALUES(null,6, null,false, true)
