@@ -5,7 +5,8 @@ VALUES('The Machine'),
       ('HR');
 
 INSERT INTO numbered_indiv(numberedFirstName,numberedLastName, numberedSSN)
-VALUES('Riley', 'Cavanaugh')
+VALUES('Riley', 'Cavanaugh'),
+      ('Leon', 'Tao')
 
 INSERT INTO miscIndiv(miscFirstName, miscLastName, relationToNIndiv, wasConnected)
 VALUES('Annie', 'Delaney', 'girlfriend', true)
