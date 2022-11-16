@@ -18,36 +18,17 @@ CREATE TABLE isNumberedIndiv(
     PRIMARY KEY(numberedSSN)
     PRIMARY KEY(charID)
     CONSTRAINT isNumbered_fk_theCharacters
-        FOREIGN KEY (charID) REFERENCES isNumberedIndiv(charID)
+        FOREIGN KEY (charID) REFERENCES theCharacters(charID)
 
 );
-
-CREATE TABLE miscIndiv(
-    noNumIndivID          int   
-    miscFirstName       varchar(52)
-    miscLastName        varchar(52)
-    relatedToNIndivID  int
-    relationToChar
-    wasConnected        boolean
-    PRIMARY KEY(noNumIndivID)
-);
-
 
 CREATE TABLE numPerpOrVic(
-    numIndivID        int
-    heroID            int
-    villainID         int
+    charID            int
     isPerp            boolean
     isVictim          boolean
-    PRIMARY KEY(numIndivID)
-    PRIMARY KEY(heroID)
-    PRIMARY KEY(villainID)
-    CONSTRAINT indivStatus_fk_numIndiv
-        FOREIGN KEY (numIndivID) REFERENCES numbered_indiv(numIndivID)
-    CONSTRAINT theHeroes_fk_numIndiv
-        FOREIGN KEY (heroID) REFERENCES theHeroes(heroID)
-    CONSTRAINT theVillains_fk_numIndiv
-        FOREIGN KEY (heroID) REFERENCES theVillains(villainID)
+    PRIMARY KEY(charID)
+    CONSTRAINT nPerporVic_fk_theCharacters
+        FOREIGN KEY (charID) REFERENCES theCharacters(charID)
 
 );
 
