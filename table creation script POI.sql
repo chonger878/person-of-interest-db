@@ -65,6 +65,11 @@ CREATE TABLE episodeName(
 )
 
 CREATE TABLE wasInEpisode(
+    charID         int
+    episodeID       int
     inEpisode     boolean
+    PRIMARY KEY(charID)
+    PRIMARY KEY(episodeID)
+    
 
 )
