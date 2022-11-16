@@ -11,12 +11,14 @@ CREATE TABLE theCharacters(
 
 );
 
-CREATE TABLE numbered_indiv(
-    numIndivID          int
-    numberedFirstName   varchar(52)
-    numberedLastName    varchar(52)
-    numberedSSN         varchar(9)
-    PRIMARY KEY(numIndivID)
+CREATE TABLE isNumberedIndiv(
+    charID          int
+    numberedSSN     varchar(9)
+    numberUp        boolean       
+    PRIMARY KEY(numberedSSN)
+    PRIMARY KEY(charID)
+    CONSTRAINT isNumbered_fk_theCharacters
+        FOREIGN KEY (charID) REFERENCES isNumberedIndiv(charID)
 
 );
 
